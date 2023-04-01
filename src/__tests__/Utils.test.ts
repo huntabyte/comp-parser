@@ -1,4 +1,4 @@
-import { isStringType, getStringWithoutQuote } from "../functions/utils"
+import { isStringType, getStringWithoutQuote } from "../functions/utils";
 
 // prettier-ignore
 const listTest = [
@@ -27,22 +27,20 @@ const listTest = [
 ];
 
 describe("test utility functions", () => {
-    test.each(listTest)(
-        `get prop isStringType("$string") => $isString`,
-        ({ string, isString }) => {
-            const result: boolean = isStringType(string)
-            expect(result).toBe(isString)
-        }
-    )
+	test.each(listTest)(
+		`get prop isStringType("$string") => $isString`,
+		({ string, isString }) => {
+			const result: boolean = isStringType(string);
+			expect(result).toBe(isString);
+		}
+	);
 
-    test.each(listTest)(
-        `get prop getStringWithoutQuote("$string") => $expcetedResult`,
-        ({ string, expcted }) => {
-            const isString: boolean = isStringType(string)
-            const result: string = isString
-                ? getStringWithoutQuote(string)
-                : string
-            expect(result).toBe(expcted)
-        }
-    )
-})
+	test.each(listTest)(
+		`get prop getStringWithoutQuote("$string") => $expcetedResult`,
+		({ string, expcted }) => {
+			const isString: boolean = isStringType(string);
+			const result: string = isString ? getStringWithoutQuote(string) : string;
+			expect(result).toBe(expcted);
+		}
+	);
+});

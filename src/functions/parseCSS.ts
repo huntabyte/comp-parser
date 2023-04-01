@@ -1,12 +1,12 @@
-import type { CSS } from "./interfaces"
+import type { CSS } from "./interfaces";
 
 function getCSSInfo(s: string): CSS {
-    const name: string = getCSSName(s)
-    return { name }
+	const name: string = getCSSName(s);
+	return { name };
 }
 
 function getCSSName(s: string): string {
-    return s.trim()
+	return s.trim();
 }
 
-export { getCSSInfo, getCSSName }
+export { getCSSInfo, getCSSName };
