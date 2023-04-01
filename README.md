@@ -1,5 +1,5 @@
 <div align="center">
-<h1>comp-parser</h1>
+<h1>comp-parser📃</h1>
 
 <p>Extract props, actions, slots and css variables from a Svelte file.</p>
 </div>

@@ -36,7 +36,7 @@
         "sveltejs",
         "sveltekit"
     ],
-    "author": "Hunter Johnston <johnstonhuntera@gmail.com> & Samuele C. De Tomasi",
+    "author": "Samuele C. De Tomasi & Hunter Johnston <johnstonhuntera@gmail.com>",
     "license": "MIT",
     "bugs": {
         "url": "https://github.com/huntabyte/comp-parser/issues"
