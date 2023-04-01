@@ -1,40 +1,52 @@
-# Svelte - Get Component Info
+<div align="center">
+<h1>comp-parser</h1>
 
-Fork of [el3um4s/svelte-get-component-info](https://github.com/el3um4s/svelte-get-component-info)
+<p>Extract props, actions, slots and css variables from a Svelte file.</p>
+</div>
 
-Credit to the original author [el3um4s](https://github.com/el3um4s). They did all the hard work, I just added some features for use with another project of mine.
+---
 
-_A function to extract information about the props, actions, slots and css variables from a Svelte file. Designed to simplify the creation of documentation_
+This is a fork is a fork of [svelte-get-component-info](https://github.com/el3um4s/svelte-get-component-info). Credit to the original author [el3um4s](https://github.com/el3um4s) for doing all the hard work. I forked this project to add additional features necessary for another library I'm working on and may not align with the original author's vision for this project.
 
-NPM link: [@huntabyte/svelte-get-component-info](https://www.npmjs.com/package/@huntabyte/svelte-get-component-info)
+## The problem
 
-### Install and use the package
+You want to document your Svelte components, but you don't want to manually write the documentation for each component. You want to extract the information from the component itself.
 
-To use the package in a project:
+## This solution
 
-```bash
-npm i @huntabyte/svelte-get-component-info
+This library provides a single function that takes a path to a Svelte file and returns an object with the props, actions, slots and css variables.
+
+At the moment, it only works with local Svelte files, however, it may eventually be extended to work with remote files.
+
+## Installation
+
+This module is distributed via [npm](https://www.npmjs.com/comp-parser) and should be installed as one of your project's `dependencies`:
+
+```
+npm i comp-parser
 ```
 
-and then in a file:
-
-```ts
-import type { SvelteInformation } from "@huntabyte/svelte-get-component-info"
-import { getInfo } from "@huntabyte/svelte-get-component-info"
-
-const info: SvelteInformation = getInfo("./src/lib/hello.svelte")
-console.log(info.props) //  [{ name: "message", type: "string", defaultValue: "Hello World" }]
-console.log(info.actions) /// [ { name: "notify" }]
+```
+pnpm i comp-parser
 ```
 
-`info` looks like this:
+## Usage
+
+```typescript
+import { getInfo, type SvelteInformation } from "comp-parser";
+
+const info: SvelteInformation = getInfo("./src/lib/hello.svelte");
+```
+
+`info` will be an object with the following structure:
 
 ```json
 {
     "props": [
-        { "name": "color", "type":"string", "defaultValue":"red" },
-        { "name": "steps", "type":"number", "defaultValue":"8" }
-        { "name": "title", "type":"string" },
+        { "name": "color", "type":"", "defaultValue": "red" },
+        { "name": "steps", "type": "number", "defaultValue": "8" }
+        { "name": "title", "type": "string" },
+        { "name": "variant", "type": "'success' | 'error' | 'warning'", "defaultValue": "success"}
         { "name": "description"}
     ],
     "actions": [
