@@ -304,6 +304,44 @@ const listTest: Array<{
 		expectedName: "string_yesType_noValue",
 		expectedType: "string",
 		expectedDefaultValue: undefined
+	},
+	{
+		prop: `export let string_literal_yesType: "a" | "b" | "c" = "c";`,
+		expectedName: "string_literal_yesType",
+		expectedType: `"a" | "b" | "c"`,
+		expectedDefaultValue: `c`
+	},
+	{
+		prop: `export let string_literal_yesType_noValue: "a" | "b" | "c";`,
+		expectedName: "string_literal_yesType_noValue",
+		expectedType: `"a" | "b" | "c"`,
+		expectedDefaultValue: undefined
+	},
+	{
+		prop: `export let string_literal_multiLine_yesType:
+        | "bar"
+        | "baz"
+        | "qux"
+        | "quux"
+        | "corge"
+        | "grault"
+        | "garply" = "qux";`,
+		expectedName: "string_literal_multiLine_yesType",
+		expectedType: `"bar" | "baz" | "qux" | "quux" | "corge" | "grault" | "garply"`,
+		expectedDefaultValue: `qux`
+	},
+	{
+		prop: `export let string_literal_multiLine_yesType_noValue:
+        | "bar"
+        | "baz"
+        | "qux"
+        | "quux"
+        | "corge"
+        | "grault"
+        | "garply";`,
+		expectedName: "string_literal_multiLine_yesType_noValue",
+		expectedType: `"bar" | "baz" | "qux" | "quux" | "corge" | "grault" | "garply"`,
+		expectedDefaultValue: undefined
 	}
 ];
 

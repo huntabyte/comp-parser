@@ -10,176 +10,213 @@ const listFiles = {
 	component_MULTI: "src/__tests__/test_files/component_multi.svelte"
 };
 
+// prettier-ignore
 const listCheckValuesProps: Array<Prop> = [
-	{
-		name: `string_noType`,
-		type: undefined,
-		defaultValue: `a - no type`
-	},
-	{
-		name: `string_yesType`,
-		type: `string`,
-		defaultValue: `a - yes type`
-	},
-	{
-		name: `string_yesType_noValue`,
-		type: `string`,
-		defaultValue: undefined
-	},
-	{
-		name: `number_noType`,
-		type: undefined,
-		defaultValue: `1`
-	},
-	{
-		name: `number_yesType`,
-		type: `number`,
-		defaultValue: `2`
-	},
-	{
-		name: `number_yesType_noValue`,
-		type: `number`,
-		defaultValue: undefined
-	},
-	{
-		name: `boolean_noType`,
-		type: undefined,
-		defaultValue: `false`
-	},
-	{
-		name: `boolean_yesType`,
-		type: `boolean`,
-		defaultValue: `true`
-	},
-	{
-		name: `boolean_yesType_noValue`,
-		type: `boolean`,
-		defaultValue: undefined
-	},
-	{
-		name: `array_string_noType`,
-		type: undefined,
-		defaultValue: `["name"]`
-	},
-	{
-		name: `array_string_yesType`,
-		type: `Array<string>`,
-		defaultValue: `["yes type"]`
-	},
-	{
-		name: `array_string_yesType_noValue`,
-		type: `Array<string>`,
-		defaultValue: undefined
-	},
-	{
-		name: `array_number_noType`,
-		type: undefined,
-		defaultValue: `[1, 2, 3]`
-	},
-	{
-		name: `array_number_yesType`,
-		type: `Array<number>`,
-		defaultValue: `[1, 2, 3]`
-	},
-	{
-		name: `array_number_yesType_noValue`,
-		type: `Array<number>`,
-		defaultValue: undefined
-	},
-	{
-		name: `object_noType`,
-		type: undefined,
-		defaultValue: `{ name: "no type" }`
-	},
-	{
-		name: `object_yesType`,
-		type: `object`,
-		defaultValue: `{ name: "yes type" }`
-	},
-	{
-		name: `object_yesType_noValue`,
-		type: `object`,
-		defaultValue: undefined
-	},
-	{
-		name: `array_object_noType`,
-		type: undefined,
-		defaultValue: `[
+    {
+        name: `string_noType`,
+        type: undefined,
+        defaultValue: `a - no type`
+    },
+    {
+        name: `string_yesType`,
+        type: `string`,
+        defaultValue: `a - yes type`
+    },
+    {
+        name: `string_yesType_noValue`,
+        type: `string`,
+        defaultValue: undefined
+    },
+    {
+        name: `number_noType`,
+        type: undefined,
+        defaultValue: `1`
+    },
+    {
+        name: `number_yesType`,
+        type: `number`,
+        defaultValue: `2`
+    },
+    {
+        name: `number_yesType_noValue`,
+        type: `number`,
+        defaultValue: undefined
+    },
+    {
+        name: `boolean_noType`,
+        type: undefined,
+        defaultValue: `false`
+    },
+    {
+        name: `boolean_yesType`,
+        type: `boolean`,
+        defaultValue: `true`
+    },
+    {
+        name: `boolean_yesType_noValue`,
+        type: `boolean`,
+        defaultValue: undefined
+    },
+        {
+        name: `array_string_noType`,
+        type: undefined,
+        defaultValue: `["name"]`
+    },
+        {
+        name: `array_string_yesType`,
+        type: `Array<string>`,
+        defaultValue: `["yes type"]`
+    },
+    {
+        name: `array_string_yesType_noValue`,
+        type: `Array<string>`,
+        defaultValue: undefined
+    },
+    {
+        name: `array_number_noType`,
+        type: undefined,
+        defaultValue: `[1, 2, 3]`
+    },
+    {
+        name: `array_number_yesType`,
+        type: `Array<number>`,
+        defaultValue: `[1, 2, 3]`
+    },
+    {
+        name: `array_number_yesType_noValue`,
+        type: `Array<number>`,
+        defaultValue: undefined
+    },
+    {
+        name: `object_noType`,
+        type: undefined,
+        defaultValue: `{ name: "no type" }`
+    },
+    {
+        name: `object_yesType`,
+        type: `object`,
+        defaultValue: `{ name: "yes type" }`
+    },
+    {
+        name: `object_yesType_noValue`,
+        type: `object`,
+        defaultValue: undefined
+    },
+        {
+        name: `array_object_noType`,
+        type: undefined,
+        defaultValue: `[
     { name: "no type" },
     { name: "no type 2" },
     { name: "no type 3" },
   ]`
-	},
-	{
-		name: `array_object_yesType`,
-		type: `Array<object>`,
-		defaultValue: `[
+    },
+    {
+        name: `array_object_yesType`,
+        type: `Array<object>`,
+        defaultValue: `[
     { name: "yes type" },
     { name: "yes type 2" },
     { name: "yes type 3" },
   ]`
-	},
-	{
-		name: `array_object_yesType_noValue`,
-		type: `Array<object>`,
-		defaultValue: undefined
-	},
-	{
-		name: `object_complex_noType`,
-		type: undefined,
-		defaultValue: `{ name: "no type", value: "complex" }`
-	},
-	{
-		name: `object_complex_yesType`,
-		type: `object`,
-		defaultValue: `{
+    },
+    {
+        name: `array_object_yesType_noValue`,
+        type: `Array<object>`,
+        defaultValue: undefined
+    },
+    {
+        name: `object_complex_noType`,
+        type: undefined,
+        defaultValue: `{ name: "no type", value: "complex" }`
+    },
+    {
+        name: `object_complex_yesType`,
+        type: `object`,
+        defaultValue: `{
     name: "yes type",
     value: "complex",
   }`
-	},
-	{
-		name: `object_complex_yesType_noValue`,
-		type: `object`,
-		defaultValue: undefined
-	},
-	{
-		name: `object_complex_object_noType`,
-		type: undefined,
-		defaultValue: `[
+    },
+    {
+        name: `object_complex_yesType_noValue`,
+        type: `object`,
+        defaultValue: undefined
+    },
+    {
+        name: `object_complex_object_noType`,
+        type: undefined,
+        defaultValue: `[
     { name: "no type", value: "complex", n: 1 },
     { name: "no type 2", value: "complex", n: 2 },
     { name: "no type 3", value: "complex", n: 3 },
   ]`
-	},
-	{
-		name: `object_complex_object_yesType`,
-		type: `object`,
-		defaultValue: `[
+    },
+    {
+        name: `object_complex_object_yesType`,
+        type: `object`,
+        defaultValue: `[
     { name: "yes type", value: "complex", n: 1 },
     { name: "yes type 2", value: "complex", n: 2 },
     { name: "yes type 3", value: "complex", n: 3 },
   ]`
-	},
-	{
-		name: `object_complex_object_yesType_noValue`,
-		type: `object`,
-		defaultValue: undefined
-	},
-	{
-		name: `function_noType`,
-		type: undefined,
-		defaultValue: `() => "no type"`
-	},
-	{
-		name: `function_yesType`,
-		type: `Function`,
-		defaultValue: `() => "yes type"`
-	},
-	{
-		name: `function_yesType_noValue`,
-		type: `Function`,
-		defaultValue: undefined
-	}
+    },
+    {
+        name: `object_complex_object_yesType_noValue`,
+        type: `object`,
+        defaultValue: undefined
+    },
+        {
+        name: `function_noType`,
+        type: undefined,
+        defaultValue: `() => "no type"`
+    },
+    {
+        name: `function_yesType`,
+        type: `Function`,
+        defaultValue: `() => "yes type"`
+    },
+    {
+        name: `function_yesType_noValue`,
+        type: `Function`,
+        defaultValue: undefined
+    },
+    {
+        name: `string_literal_yesType`,
+        type: `"a" | "b" | "c"`,
+        defaultValue: `c`
+    },
+    {
+        name: `string_literal_yesType_noValue`,
+        type: `"a" | "b" | "c"`,
+        defaultValue: undefined
+    },
+    {
+        name: `string_literal_multiLine_yesType`,
+        type: `
+    | "bar"
+    | "baz"
+    | "qux"
+    | "quux"
+    | "corge"
+    | "grault"
+    | "garply"
+`,
+        defaultValue: `qux`
+    },
+    {
+        name: `string_literal_multiLine_yesType_noValue`,
+        type: `
+    | "bar"
+    | "baz"
+    | "qux"
+    | "quux"
+    | "corge"
+    | "grault"
+    | "garply"
+`,
+        defaultValue: undefined
+    }
 ];
 
 const listCheckValueActions: Array<Action> = [
@@ -216,7 +253,7 @@ describe("Parse svelte files - SCRIPTS", () => {
 
 	test("parse file with 30 props (TS)", () => {
 		const result: SvelteInformation = getInfo(listFiles.component_MULTI);
-		expect(result.props.length).toBe(30);
+		expect(result.props.length).toBe(32);
 	});
 });
 
