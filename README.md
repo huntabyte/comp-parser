@@ -8,6 +8,11 @@
 
 This is a fork is a fork of [svelte-get-component-info](https://github.com/el3um4s/svelte-get-component-info). Credit to the original author [el3um4s](https://github.com/el3um4s) for doing all the hard work. I forked this project to add additional features necessary for another library I'm working on and may not align with the original author's vision for this project.
 
+Features added:
+
+- Support for multiline types
+- Format code string before parsing (format your components however you like, this library will handle them all the same)
+
 ## The problem
 
 You want to document your Svelte components, but you don't want to manually write the documentation for each component. You want to extract the information from the component itself.
