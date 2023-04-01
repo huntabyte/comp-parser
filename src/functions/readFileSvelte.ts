@@ -2,10 +2,9 @@ import { existsSync, readFileSync } from "fs";
 import { trueCasePathSync } from "true-case-path";
 import { toTry } from "@el3um4s/to-try";
 import { format } from "prettier";
-
 import { Content } from "./interfaces";
 
-function readFileSvelte(fileName: string) {
+export function readFileSvelte(fileName: string) {
 	const content: Content = {
 		error: {
 			status: true,
@@ -45,7 +44,7 @@ function readFileSvelte(fileName: string) {
 	return content;
 }
 
-function checkFileExist(fileName: string): boolean {
+export function checkFileExist(fileName: string): boolean {
 	try {
 		const truePath = trueCasePathSync(fileName);
 		return existsSync(truePath);
@@ -53,5 +52,3 @@ function checkFileExist(fileName: string): boolean {
 		return false;
 	}
 }
-
-export { readFileSvelte, checkFileExist };
