@@ -7,7 +7,8 @@ const listFiles = {
 	component_TS: "src/__tests__/test_files/component_simple_ts.svelte",
 	component_NO_SCRIPT:
 		"src/__tests__/test_files/component_simple_no_script.svelte",
-	component_MULTI: "src/__tests__/test_files/component_multi.svelte"
+	component_MULTI: "src/__tests__/test_files/component_multi.svelte",
+	component_BAD_FORMAT: "src/__tests__/test_files/component_bad_format.svelte"
 };
 
 // prettier-ignore
@@ -251,14 +252,39 @@ describe("Parse svelte files - SCRIPTS", () => {
 		expect(result.props.length).toBe(1);
 	});
 
-	test("parse file with 32 props (TS)", () => {
+	test("parse file with 32 props (MULTI)", () => {
 		const result: SvelteInformation = getInfo(listFiles.component_MULTI);
+		expect(result.props.length).toBe(34);
+	});
+
+	test("parse file with 32 props (BAD FORMATS)", () => {
+		const result: SvelteInformation = getInfo(listFiles.component_BAD_FORMAT);
 		expect(result.props.length).toBe(34);
 	});
 });
 
-describe("Parse Svelte - check props", () => {
+describe("Parse Svelte - check props (MULTI)", () => {
 	const result: SvelteInformation = getInfo(listFiles.component_MULTI);
+	const props: Array<Prop> = result.props;
+	props.forEach((prop: Prop, index: number) => {
+		test(`check prop: name=${prop.name} - type=${prop.type}`, () => {
+			expect(prop.name).toBe(listCheckValuesProps[index].name);
+			expect(prop.type).toBe(
+				listCheckValuesProps[index].type
+					?.replace(/^\s*\|\s*|\s{2,}/gm, " ")
+					.trim()
+			);
+			expect(prop.defaultValue?.replace(/(\r\n|\n|\r)/gm, "")).toBe(
+				listCheckValuesProps[index].defaultValue
+					?.trim()
+					?.replace(/(\r\n|\n|\r)/gm, "")
+			);
+		});
+	});
+});
+
+describe("Parse Svelte - check props (BAD FORMAT)", () => {
+	const result: SvelteInformation = getInfo(listFiles.component_BAD_FORMAT);
 	const props: Array<Prop> = result.props;
 	props.forEach((prop: Prop, index: number) => {
 		test(`check prop: name=${prop.name} - type=${prop.type}`, () => {
@@ -283,24 +309,39 @@ describe("Parse svelte files - ACTIONS", () => {
 		expect(result.actions.length).toBe(0);
 	});
 
-	test("parse file with only 1 prop (JS)", () => {
+	test("parse file with only 1 action (JS)", () => {
 		const result: SvelteInformation = getInfo(listFiles.component_JS);
 		expect(result.actions.length).toBe(1);
 	});
 
-	test("parse file with only 1 prop (TS)", () => {
+	test("parse file with only 1 action (TS)", () => {
 		const result: SvelteInformation = getInfo(listFiles.component_TS);
 		expect(result.actions.length).toBe(1);
 	});
 
-	test("parse file with 7 actions (TS)", () => {
+	test("parse file with 7 actions (MULTI)", () => {
 		const result: SvelteInformation = getInfo(listFiles.component_MULTI);
+		expect(result.actions.length).toBe(7);
+	});
+
+	test("parse file with 7 actions (BAD FORMAT)", () => {
+		const result: SvelteInformation = getInfo(listFiles.component_BAD_FORMAT);
 		expect(result.actions.length).toBe(7);
 	});
 });
 
-describe("Parse Svelte - check actions", () => {
+describe("Parse Svelte - check actions (MULTI)", () => {
 	const result: SvelteInformation = getInfo(listFiles.component_MULTI);
+	const actions: Array<Action> = result.actions;
+	actions.forEach((action: Action, index: number) => {
+		test(`check action: name=${action.name}`, () => {
+			expect(action.name).toBe(listCheckValueActions[index].name);
+		});
+	});
+});
+
+describe("Parse Svelte - check actions (BAD FORMAT)", () => {
+	const result: SvelteInformation = getInfo(listFiles.component_BAD_FORMAT);
 	const actions: Array<Action> = result.actions;
 	actions.forEach((action: Action, index: number) => {
 		test(`check action: name=${action.name}`, () => {
@@ -325,14 +366,30 @@ describe("Parse svelte files - SLOTS", () => {
 		expect(result.slots.length).toBe(1);
 	});
 
-	test("parse file with 3 slots (TS)", () => {
+	test("parse file with 3 slots (MULTI)", () => {
 		const result: SvelteInformation = getInfo(listFiles.component_MULTI);
+		expect(result.slots.length).toBe(3);
+	});
+
+	test("parse file with 3 slots (BAD FORMAT)", () => {
+		const result: SvelteInformation = getInfo(listFiles.component_BAD_FORMAT);
 		expect(result.slots.length).toBe(3);
 	});
 });
 
-describe("Parse Svelte - check slots", () => {
+describe("Parse Svelte - check slots (MULTI)", () => {
 	const result: SvelteInformation = getInfo(listFiles.component_MULTI);
+	const slots: Array<Slot> = result.slots;
+	slots.forEach((slot: Slot, index: number) => {
+		test(`check slot: name=${slot.name}, anonymous=${slot.anonymous}`, () => {
+			expect(slot.name).toBe(listCheckValueSlot[index].name);
+			expect(slot.anonymous).toBe(listCheckValueSlot[index].anonymous);
+		});
+	});
+});
+
+describe("Parse Svelte - check slots (BAD FORMAT)", () => {
+	const result: SvelteInformation = getInfo(listFiles.component_BAD_FORMAT);
 	const slots: Array<Slot> = result.slots;
 	slots.forEach((slot: Slot, index: number) => {
 		test(`check slot: name=${slot.name}, anonymous=${slot.anonymous}`, () => {

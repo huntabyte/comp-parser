@@ -4,6 +4,12 @@ dependencies:
   '@el3um4s/to-try':
     specifier: ^1.0.1
     version: 1.0.1
+  prettier:
+    specifier: ^2.8.7
+    version: 2.8.7
+  prettier-plugin-svelte:
+    specifier: ^2.10.0
+    version: 2.10.0(prettier@2.8.7)(svelte@3.58.0)
   true-case-path:
     specifier: ^2.2.1
     version: 2.2.1
@@ -3113,6 +3119,22 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
+  /prettier-plugin-svelte@2.10.0(prettier@2.8.7)(svelte@3.58.0):
+    resolution: {integrity: sha512-GXMY6t86thctyCvQq+jqElO+MKdB09BkL3hexyGP3Oi8XLKRFaJP1ud/xlWCZ9ZIa2BxHka32zhHfcuU+XsRQg==}
+    peerDependencies:
+      prettier: ^1.16.4 || ^2.0.0
+      svelte: ^3.2.0
+    dependencies:
+      prettier: 2.8.7
+      svelte: 3.58.0
+    dev: false
+
+  /prettier@2.8.7:
+    resolution: {integrity: sha512-yPngTo3aXUUmyuTjeTUT75txrf+aMh9FiD7q9ZE/i6r0bPb22g4FsE6Y338PQX1bmfy08i9QQCB7/rcUAVntfw==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
+    dev: false
+
   /pretty-format@29.5.0:
     resolution: {integrity: sha512-V2mGkI31qdttvTFX7Mt4efOqHXqJWMu4/r66Xh3Z3BwZaPfPJgp6/gbwoujRpPUtfEF6AUUWx3Jim3GCw5g/Qw==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
@@ -3386,6 +3408,11 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
     dev: true
+
+  /svelte@3.58.0:
+    resolution: {integrity: sha512-brIBNNB76mXFmU/Kerm4wFnkskBbluBDCjx/8TcpYRb298Yh2dztS2kQ6bhtjMcvUhd5ynClfwpz5h2gnzdQ1A==}
+    engines: {node: '>= 8'}
+    dev: false
 
   /test-exclude@6.0.0:
     resolution: {integrity: sha512-cAGWPIyOHU6zlmg88jwm7VRyXnMN7iV68OGAbYDk/Mh/xC/pzVPlQtY6ngoIH/5/tciuhGfvESU8GrHrcxD56w==}

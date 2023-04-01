@@ -16,7 +16,8 @@ const listFiles = {
 	component_TS: "src/__tests__/test_files/component_simple_ts.svelte",
 	component_NO_SCRIPT:
 		"src/__tests__/test_files/component_simple_no_script.svelte",
-	component_MULTI: "src/__tests__/test_files/component_multi.svelte"
+	component_MULTI: "src/__tests__/test_files/component_multi.svelte",
+	component_BAD_FORMATS: "src/__tests__/test_files/component_bad_format.svelte"
 };
 
 describe("Parse Svelte - Checks Props", () => {
@@ -56,6 +57,13 @@ describe("Parse Svelte - Checks Props", () => {
 		expect(props).toBeTruthy();
 	});
 
+	test("check has props BAD FORMATS", () => {
+		const file: Content = readFileSvelte(listFiles.component_BAD_FORMATS);
+		const content: string = file.content.content;
+		const props: boolean = hasProps(content);
+		expect(props).toBeTruthy();
+	});
+
 	test("count props in files", () => {
 		const file_js = getProps_asInFile(
 			readFileSvelte(listFiles.component_JS).content.content
@@ -73,6 +81,10 @@ describe("Parse Svelte - Checks Props", () => {
 			readFileSvelte(listFiles.component_MULTI).content.content
 		);
 		expect(file_multi.length).toBe(34);
+		const file_bad_formats = getProps_asInFile(
+			readFileSvelte(listFiles.component_BAD_FORMATS).content.content
+		);
+		expect(file_bad_formats.length).toBe(34);
 	});
 });
 
@@ -112,6 +124,12 @@ describe("Parse Svelte - Checks Actions", () => {
 		const actions: boolean = hasActions(content);
 		expect(actions).toBeTruthy();
 	});
+	test("check has actions BAD FORMATS", () => {
+		const file: Content = readFileSvelte(listFiles.component_BAD_FORMATS);
+		const content: string = file.content.content;
+		const actions: boolean = hasActions(content);
+		expect(actions).toBeTruthy();
+	});
 
 	test("count actions in files", () => {
 		const file_js = getActions_asInFile(
@@ -130,6 +148,11 @@ describe("Parse Svelte - Checks Actions", () => {
 			readFileSvelte(listFiles.component_MULTI).content.content
 		);
 		expect(file_multi.length).toBe(9);
+
+		const file_bad_formats = getActions_asInFile(
+			readFileSvelte(listFiles.component_BAD_FORMATS).content.content
+		);
+		expect(file_bad_formats.length).toBe(9);
 	});
 });
 
@@ -165,6 +188,13 @@ describe("Parse Svelte - Checks Slots", () => {
 
 	test("check has slots MULTI", () => {
 		const file: Content = readFileSvelte(listFiles.component_MULTI);
+		const content: string = file.content.content;
+		const slots: boolean = hasSlots(content);
+		expect(slots).toBeTruthy();
+	});
+
+	test("check has slots BAD FORMATS", () => {
+		const file: Content = readFileSvelte(listFiles.component_BAD_FORMATS);
 		const content: string = file.content.content;
 		const slots: boolean = hasSlots(content);
 		expect(slots).toBeTruthy();
@@ -227,6 +257,13 @@ describe("Parse Svelte - Checks CSS VARIABLES", () => {
 		expect(slots).toBeTruthy();
 	});
 
+	test("check has CSS VARIABLES BAD FORMATS", () => {
+		const file: Content = readFileSvelte(listFiles.component_BAD_FORMATS);
+		const content: string = file.content.content;
+		const slots: boolean = hasCSS(content);
+		expect(slots).toBeTruthy();
+	});
+
 	test("count CSS VARIABLES in files", () => {
 		const file_js = getCSS_asInFile(
 			readFileSvelte(listFiles.component_JS).content.content
@@ -244,5 +281,10 @@ describe("Parse Svelte - Checks CSS VARIABLES", () => {
 			readFileSvelte(listFiles.component_MULTI).content.content
 		);
 		expect(file_multi.length).toBe(16);
+
+		const file_bad_formats = getCSS_asInFile(
+			readFileSvelte(listFiles.component_BAD_FORMATS).content.content
+		);
+		expect(file_bad_formats.length).toBe(16);
 	});
 });

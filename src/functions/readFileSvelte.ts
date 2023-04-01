@@ -1,6 +1,7 @@
 import { existsSync, readFileSync } from "fs";
 import { trueCasePathSync } from "true-case-path";
 import { toTry } from "@el3um4s/to-try";
+import { format } from "prettier";
 
 import { Content } from "./interfaces";
 
@@ -20,14 +21,21 @@ function readFileSvelte(fileName: string) {
 		const [result, error] = toTry(() => readFileSync(fileName));
 
 		if (!error && result) {
-			const contentString = result.toString();
+			const rawContentString = result.toString();
+			const formattedContentString = fileName.endsWith(".svelte")
+				? format(rawContentString, {
+						parser: "svelte",
+						pluginSearchDirs: ["./node_modules"],
+						plugins: ["prettier-plugin-svelte"]
+				  })
+				: rawContentString;
 			content.error = {
 				status: false,
 				content: ""
 			};
 			content.content = {
 				status: true,
-				content: contentString
+				content: formattedContentString
 			};
 		}
 	} else {
