@@ -16,10 +16,10 @@ import {
     Action,
     Slot,
     CSS,
-    SvelteInformations,
+    SvelteInformation,
 } from "./interfaces"
 
-function getInfo(source: string): SvelteInformations {
+function getInfo(source: string): SvelteInformation {
     const file: Content = readFileSvelte(source)
 
     const propsAsInFile = getProps_asInFile(file.content.content)

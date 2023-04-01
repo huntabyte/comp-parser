@@ -1,73 +1,63 @@
 {
-  "name": "@el3um4s/svelte-get-component-info",
-  "version": "0.0.16",
-  "description": "Typescript NPM Package Starter",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
-  "scripts": {
-    "build": "tsc",
-    "lint": "eslint . --ext .ts",
-    "test": "jest --config jestconfig.json",
-    "test:no-coverage": "jest --config jestconfig.json --coverage=false",
-    "prepare": "npm run build",
-    "prepublishOnly": "npm test && npm run lint",
-    "preversion": "npm run lint",
-    "version": "git add -A src",
-    "postversion": "git push && git push --tags",
-    "check-updates": "npx npm-check-updates",
-    "check-updates:minor": "npx npm-check-updates --target minor",
-    "check-updates:patch": "npx npm-check-updates --target patch",
-    "version:patch": "npm version patch"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/el3um4s/svelte-get-component-info.git"
-  },
-  "files": [
-    "lib/**/*"
-  ],
-  "keywords": [
-    "typescript",
-    "npm",
-    "ts",
-    "svelte",
-    "documentation",
-    "autogenerator",
-    "sveltejs",
-    "sveltekit"
-  ],
-  "author": "Samuele C. De Tomasi",
-  "license": "MIT",
-  "funding": [
-    {
-      "type": "patreon",
-      "url": "https://www.patreon.com/el3um4s"
+    "name": "@huntabyte/svelte-get-component-info",
+    "version": "0.0.1",
+    "description": "Extract information about the props, actions, slots and css variables from a Svelte file. Designed to simplify the creation of documentation.",
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "scripts": {
+        "build": "tsc",
+        "lint": "eslint . --ext .ts",
+        "test": "jest --config jestconfig.json",
+        "test:no-coverage": "jest --config jestconfig.json --coverage=false",
+        "prepare": "npm run build",
+        "prepublishOnly": "npm test && npm run lint",
+        "preversion": "npm run lint",
+        "version": "git add -A src",
+        "postversion": "git push && git push --tags",
+        "check-updates": "npx npm-check-updates",
+        "check-updates:minor": "npx npm-check-updates --target minor",
+        "check-updates:patch": "npx npm-check-updates --target patch",
+        "version:patch": "npm version patch"
     },
-    {
-      "type": "individual",
-      "url": "https://www.paypal.me/el3um4s"
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/huntabyte/svelte-get-component-info.git"
+    },
+    "files": [
+        "lib/**/*"
+    ],
+    "keywords": [
+        "typescript",
+        "npm",
+        "ts",
+        "svelte",
+        "documentation",
+        "autogenerator",
+        "sveltejs",
+        "sveltekit"
+    ],
+    "author": "Samuele C. De Tomasi & Hunter Johnston <johnstonhuntera@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/huntabyte/svelte-get-component-info/issues"
+    },
+    "homepage": "https://github.com/huntabyte/svelte-get-component-info#readme",
+    "devDependencies": {
+        "@types/jest": "^27.0.3",
+        "@types/node": "^17.0.5",
+        "@typescript-eslint/eslint-plugin": "^5.8.1",
+        "@typescript-eslint/parser": "^5.8.1",
+        "eslint": "^8.5.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-config-standard": "^16.0.3",
+        "eslint-plugin-import": "^2.25.3",
+        "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-promise": "^6.0.0",
+        "jest": "^27.4.5",
+        "ts-jest": "^27.1.2",
+        "typescript": "^4.5.4"
+    },
+    "dependencies": {
+        "@el3um4s/to-try": "^0.0.5"
     }
-  ],
-  "bugs": {
-    "url": "https://github.com/el3um4s/svelte-get-component-info/issues"
-  },
-  "homepage": "https://github.com/el3um4s/svelte-get-component-info#readme",
-  "devDependencies": {
-    "@types/jest": "^27.0.3",
-    "@types/node": "^17.0.5",
-    "@typescript-eslint/eslint-plugin": "^5.8.1",
-    "@typescript-eslint/parser": "^5.8.1",
-    "eslint": "^8.5.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-config-standard": "^16.0.3",
-    "eslint-plugin-import": "^2.25.3",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^6.0.0",
-    "jest": "^27.4.5",
-    "ts-jest": "^27.1.2",
-    "typescript": "^4.5.4"
-  },
-  "dependencies": {
-    "@el3um4s/to-try": "^0.0.5"
-  }
 }

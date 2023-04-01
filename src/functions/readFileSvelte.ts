@@ -3,7 +3,7 @@ import { toTry } from "@el3um4s/to-try"
 
 import { Content } from "./interfaces"
 
-function readFileSvelte(nameFile: string) {
+function readFileSvelte(fileName: string) {
     const content: Content = {
         error: {
             status: true,
@@ -15,8 +15,8 @@ function readFileSvelte(nameFile: string) {
         },
     }
 
-    if (checkFileExist(nameFile)) {
-        const [result, error] = toTry(() => readFileSync(nameFile))
+    if (checkFileExist(fileName)) {
+        const [result, error] = toTry(() => readFileSync(fileName))
 
         if (!error && result) {
             const contentString = result.toString()
@@ -30,14 +30,14 @@ function readFileSvelte(nameFile: string) {
             }
         }
     } else {
-        content.error.content = `File "${nameFile}" not exist`
+        content.error.content = `File "${fileName}" not exist`
     }
 
     return content
 }
 
-function checkFileExist(nameFile: string): boolean {
-    return existsSync(nameFile)
+function checkFileExist(fileName: string): boolean {
+    return existsSync(fileName)
 }
 
 export { readFileSvelte, checkFileExist }

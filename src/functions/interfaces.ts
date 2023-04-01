@@ -27,7 +27,7 @@ export interface CSS {
     name: string
 }
 
-export interface SvelteInformations {
+export interface SvelteInformation {
     props: Array<Prop>
     actions: Array<Action>
     slots: Array<Slot>

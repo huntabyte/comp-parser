@@ -1,4 +1,4 @@
 import { getInfo } from "./functions/getInfo"
-import type { SvelteInformations } from "./functions/interfaces"
+import type { SvelteInformation } from "./functions/interfaces"
 
-export { getInfo, SvelteInformations }
+export { getInfo, SvelteInformation }

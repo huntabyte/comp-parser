@@ -2,13 +2,11 @@
 
 Fork of [el3um4s/svelte-get-component-info](https://github.com/el3um4s/svelte-get-component-info)
 
-Credit to the original author [el3um4s](https://github.com/el3um4s) for the original package. They did all the hard work, I just added some features for use with another project of mine.
+Credit to the original author [el3um4s](https://github.com/el3um4s). They did all the hard work, I just added some features for use with another project of mine.
 
 _A function to extract information about the props, actions, slots and css variables from a Svelte file. Designed to simplify the creation of documentation_
 
 NPM link: [@huntabyte/svelte-get-component-info](https://www.npmjs.com/package/@huntabyte/svelte-get-component-info)
-
-I recommend using it with [el3um4s/svelte-component-info](https://github.com/el3um4s/svelte-component-info) (npm: [@el3um4s/svelte-component-info](https://www.npmjs.com/package/@el3um4s/svelte-component-info))
 
 ### Install and use the package
 
@@ -21,10 +19,10 @@ npm i @huntabyte/svelte-get-component-info
 and then in a file:
 
 ```ts
-import type { SvelteInformations } from "@huntabyte/svelte-get-component-info"
+import type { SvelteInformation } from "@huntabyte/svelte-get-component-info"
 import { getInfo } from "@huntabyte/svelte-get-component-info"
 
-const info: SvelteInformations = getInfo("./src/lib/hello.svelte")
+const info: SvelteInformation = getInfo("./src/lib/hello.svelte")
 console.log(info.props) //  [{ name: "message", type: "string", defaultValue: "Hello World" }]
 console.log(info.actions) /// [ { name: "notify" }]
 ```
