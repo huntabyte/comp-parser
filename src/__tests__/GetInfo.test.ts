@@ -251,9 +251,9 @@ describe("Parse svelte files - SCRIPTS", () => {
 		expect(result.props.length).toBe(1);
 	});
 
-	test("parse file with 30 props (TS)", () => {
+	test("parse file with 32 props (TS)", () => {
 		const result: SvelteInformation = getInfo(listFiles.component_MULTI);
-		expect(result.props.length).toBe(32);
+		expect(result.props.length).toBe(34);
 	});
 });
 
@@ -263,7 +263,11 @@ describe("Parse Svelte - check props", () => {
 	props.forEach((prop: Prop, index: number) => {
 		test(`check prop: name=${prop.name} - type=${prop.type}`, () => {
 			expect(prop.name).toBe(listCheckValuesProps[index].name);
-			expect(prop.type).toBe(listCheckValuesProps[index].type);
+			expect(prop.type).toBe(
+				listCheckValuesProps[index].type
+					?.replace(/^\s*\|\s*|\s{2,}/gm, " ")
+					.trim()
+			);
 			expect(prop.defaultValue?.replace(/(\r\n|\n|\r)/gm, "")).toBe(
 				listCheckValuesProps[index].defaultValue
 					?.trim()

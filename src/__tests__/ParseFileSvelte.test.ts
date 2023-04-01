@@ -72,7 +72,7 @@ describe("Parse Svelte - Checks Props", () => {
 		const file_multi = getProps_asInFile(
 			readFileSvelte(listFiles.component_MULTI).content.content
 		);
-		expect(file_multi.length).toBe(32);
+		expect(file_multi.length).toBe(34);
 	});
 });
 

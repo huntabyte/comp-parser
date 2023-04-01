@@ -53,8 +53,8 @@
   export let function_yesType: Function = () => "yes type";
   export let function_yesType_noValue: Function;
 
-  export let string_literal_yesType: "a" | "b" | "c" = "c"
-  export let string_literal_yesType_noValue: "a" | "b" | "c"
+  export let string_literal_yesType: "a" | "b" | "c" = "c";
+  export let string_literal_yesType_noValue: "a" | "b" | "c";
 
   export let string_literal_multiLine_yesType:
     | "bar"
