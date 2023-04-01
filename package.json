@@ -1,6 +1,6 @@
 {
     "name": "@huntabyte/svelte-get-component-info",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Extract information about the props, actions, slots and css variables from a Svelte file. Designed to simplify the creation of documentation.",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
