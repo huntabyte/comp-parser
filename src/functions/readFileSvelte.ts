@@ -1,4 +1,5 @@
 import { existsSync, readFileSync } from "fs"
+import { trueCasePathSync } from "true-case-path"
 import { toTry } from "@el3um4s/to-try"
 
 import { Content } from "./interfaces"
@@ -37,7 +38,11 @@ function readFileSvelte(fileName: string) {
 }
 
 function checkFileExist(fileName: string): boolean {
-    return existsSync(fileName)
+    try {
+        const truePath = trueCasePathSync(fileName)
+        return existsSync(truePath)
+    } catch {}
+    return false
 }
 
 export { readFileSvelte, checkFileExist }
