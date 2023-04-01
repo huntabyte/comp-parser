@@ -4,6 +4,9 @@ dependencies:
   '@el3um4s/to-try':
     specifier: ^1.0.1
     version: 1.0.1
+  true-case-path:
+    specifier: ^2.2.1
+    version: 2.2.1
 
 devDependencies:
   '@types/jest':
@@ -39,9 +42,6 @@ devDependencies:
   jest:
     specifier: ^29.5.0
     version: 29.5.0(@types/node@18.15.11)
-  true-case-path:
-    specifier: ^2.2.1
-    version: 2.2.1
   ts-jest:
     specifier: ^29.0.5
     version: 29.0.5(@babel/core@7.21.4)(jest@29.5.0)(typescript@5.0.3)
@@ -3418,7 +3418,7 @@ packages:
 
   /true-case-path@2.2.1:
     resolution: {integrity: sha512-0z3j8R7MCjy10kc/g+qg7Ln3alJTodw9aDuVWZa3uiWqfuBMKeAeP2ocWcxoyM3D73yz3Jt/Pu4qPr4wHSdB/Q==}
-    dev: true
+    dev: false
 
   /ts-jest@29.0.5(@babel/core@7.21.4)(jest@29.5.0)(typescript@5.0.3):
     resolution: {integrity: sha512-PL3UciSgIpQ7f6XjVOmbi96vmDHUqAyqDr8YxzopDqX3kfgYtX1cuNeBjP+L9sFXi6nzsGGA6R3fP3DDDJyrxA==}
