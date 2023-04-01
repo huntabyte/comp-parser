@@ -41,8 +41,9 @@ function checkFileExist(fileName: string): boolean {
 	try {
 		const truePath = trueCasePathSync(fileName);
 		return existsSync(truePath);
-	} catch {}
-	return false;
+	} catch {
+		return false;
+	}
 }
 
 export { readFileSvelte, checkFileExist };
