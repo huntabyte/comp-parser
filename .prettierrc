@@ -4,8 +4,5 @@
     "semi": true,
     "trailingComma": "none",
     "printWidth": 80,
-    "bracketSameLine": true,
-    "extends": [
-        "prettier"
-    ]
+    "bracketSameLine": true
 }
