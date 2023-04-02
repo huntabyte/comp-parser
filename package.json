@@ -5,6 +5,7 @@
     "main": "./dist/index.js",
     "module": "./dist/index.mjs",
     "types": "./dist/index.d.ts",
+    "private": false,
     "scripts": {
         "dev": "vitest",
         "build": "tsup src/index.ts --dts --format cjs,esm --external @el3um4s/to-try,prettier,prettier-plugin-svelte,true-case-path",
