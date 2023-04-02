@@ -1,5 +1,11 @@
 # comp-parser
 
+## 0.0.6
+
+### Patch Changes
+
+- e967fe0: Possibly fix package.json issue
+
 ## 0.0.5
 
 ### Patch Changes
