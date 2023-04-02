@@ -12,12 +12,11 @@ import {
 import type { Content } from "../functions/interfaces";
 
 const listFiles = {
-	component_JS: "src/__tests__/test_files/component_simple_js.svelte",
-	component_TS: "src/__tests__/test_files/component_simple_ts.svelte",
-	component_NO_SCRIPT:
-		"src/__tests__/test_files/component_simple_no_script.svelte",
-	component_MULTI: "src/__tests__/test_files/component_multi.svelte",
-	component_BAD_FORMATS: "src/__tests__/test_files/component_bad_format.svelte"
+	component_JS: "src/tests/test_files/component_simple_js.svelte",
+	component_TS: "src/tests/test_files/component_simple_ts.svelte",
+	component_NO_SCRIPT: "src/tests/test_files/component_simple_no_script.svelte",
+	component_MULTI: "src/tests/test_files/component_multi.svelte",
+	component_BAD_FORMATS: "src/tests/test_files/component_bad_format.svelte"
 };
 
 describe("Parse Svelte - Checks Props", () => {
