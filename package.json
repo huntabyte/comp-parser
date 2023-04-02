@@ -2,23 +2,16 @@
     "name": "comp-parser",
     "version": "0.0.1",
     "description": "Extract props, actions, slots and css variables from Svelte components. Designed to simplify the creation of documentation.",
-    "main": "lib/index.js",
-    "types": "lib/index.d.ts",
+    "main": "./dist/index.js",
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.ts",
     "scripts": {
         "dev": "vitest",
         "build": "tsup src/index.ts --dts --format cjs,esm --external @el3um4s/to-try,prettier,prettier-plugin-svelte,true-case-path",
         "lint": "eslint . --ext .ts",
         "test": "vitest run",
         "ci": "pnpm run lint && pnpm run test && pnpm run build",
-        "prepare": "npm run build",
-        "prepublishOnly": "npm test && npm run lint",
-        "preversion": "npm run lint",
-        "version": "git add -A src",
-        "postversion": "git push && git push --tags",
-        "check-updates": "npx npm-check-updates",
-        "check-updates:minor": "npx npm-check-updates --target minor",
-        "check-updates:patch": "npx npm-check-updates --target patch",
-        "version:patch": "npm version patch"
+        "release": "pnpm run lint && pnpm run test && pnpm run build && changeset publish"
     },
     "repository": {
         "type": "git",
@@ -44,6 +37,7 @@
     },
     "homepage": "https://github.com/huntabyte/comp-parser#readme",
     "devDependencies": {
+        "@changesets/cli": "^2.26.1",
         "@types/node": "^18.15.11",
         "@types/prettier": "^2.7.2",
         "@typescript-eslint/eslint-plugin": "^5.57.0",
