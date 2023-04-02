@@ -1,6 +1,6 @@
 {
     "name": "comp-parser",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "description": "Extract props, actions, slots and css variables from Svelte components. Designed to simplify the creation of documentation.",
     "main": "./dist/index.js",
     "module": "./dist/index.mjs",
