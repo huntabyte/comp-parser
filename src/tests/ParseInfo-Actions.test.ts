@@ -16,7 +16,7 @@ const listTest: Array<{ text: string; expectedAction: string }> = [
 ];
 
 describe("Get actions", () => {
-	test.each(listTest)(
+	it.each(listTest)(
 		`Extract action from a text: $text => $expectedAction`,
 		({ text, expectedAction }) => {
 			const action: string = getActionName(text);

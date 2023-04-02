@@ -21,7 +21,7 @@ const listFiles = {
 };
 
 describe("Parse Svelte - Checks Props", () => {
-	test("check has props JS", () => {
+	it.concurrent("check has props JS", ({ expect }) => {
 		const file: Content = readFileSvelte(listFiles.component_JS);
 		const content: string = file.content.content;
 		const props: boolean = hasProps(content);
@@ -31,7 +31,7 @@ describe("Parse Svelte - Checks Props", () => {
 		expect(listProps[0].trim()).toBe("export let propGeneric;");
 	});
 
-	test("check has props TS", () => {
+	it.concurrent("check has props TS", ({ expect }) => {
 		const file: Content = readFileSvelte(listFiles.component_TS);
 		const content: string = file.content.content;
 		const props: boolean = hasProps(content);
@@ -41,7 +41,7 @@ describe("Parse Svelte - Checks Props", () => {
 		expect(listProps[0].trim()).toBe("export let propGeneric: string;");
 	});
 
-	test("check has props NO SCRIPTS", () => {
+	it.concurrent("check has props NO SCRIPTS", ({ expect }) => {
 		const file: Content = readFileSvelte(listFiles.component_NO_SCRIPT);
 		const content: string = file.content.content;
 		const props: boolean = hasProps(content);
@@ -50,21 +50,21 @@ describe("Parse Svelte - Checks Props", () => {
 		expect(listProps.length).toBe(0);
 	});
 
-	test("check has props MULTI", () => {
+	it.concurrent("check has props MULTI", ({ expect }) => {
 		const file: Content = readFileSvelte(listFiles.component_MULTI);
 		const content: string = file.content.content;
 		const props: boolean = hasProps(content);
 		expect(props).toBeTruthy();
 	});
 
-	test("check has props BAD FORMATS", () => {
+	it.concurrent("check has props BAD FORMATS", ({ expect }) => {
 		const file: Content = readFileSvelte(listFiles.component_BAD_FORMATS);
 		const content: string = file.content.content;
 		const props: boolean = hasProps(content);
 		expect(props).toBeTruthy();
 	});
 
-	test("count props in files", () => {
+	it.concurrent("count props in files", ({ expect }) => {
 		const file_js = getProps_asInFile(
 			readFileSvelte(listFiles.component_JS).content.content
 		);
@@ -89,7 +89,7 @@ describe("Parse Svelte - Checks Props", () => {
 });
 
 describe("Parse Svelte - Checks Actions", () => {
-	test("check has actions JS", () => {
+	it.concurrent("check has actions JS", ({ expect }) => {
 		const file: Content = readFileSvelte(listFiles.component_JS);
 		const content: string = file.content.content;
 		const actions: boolean = hasActions(content);
@@ -99,7 +99,7 @@ describe("Parse Svelte - Checks Actions", () => {
 		expect(listActions[0].trim()).toBe(`"message"`);
 	});
 
-	test("check has actions TS", () => {
+	it.concurrent("check has actions TS", ({ expect }) => {
 		const file: Content = readFileSvelte(listFiles.component_TS);
 		const content: string = file.content.content;
 		const actions: boolean = hasActions(content);
@@ -109,7 +109,7 @@ describe("Parse Svelte - Checks Actions", () => {
 		expect(listActions[0].trim()).toBe(`"message"`);
 	});
 
-	test("check has actions NO ACTIONS", () => {
+	it.concurrent("check has actions NO ACTIONS", ({ expect }) => {
 		const file: Content = readFileSvelte(listFiles.component_NO_SCRIPT);
 		const content: string = file.content.content;
 		const actions: boolean = hasActions(content);
@@ -118,20 +118,20 @@ describe("Parse Svelte - Checks Actions", () => {
 		expect(listActions.length).toBe(0);
 	});
 
-	test("check has actions MULTI", () => {
+	it.concurrent("check has actions MULTI", ({ expect }) => {
 		const file: Content = readFileSvelte(listFiles.component_MULTI);
 		const content: string = file.content.content;
 		const actions: boolean = hasActions(content);
 		expect(actions).toBeTruthy();
 	});
-	test("check has actions BAD FORMATS", () => {
+	it.concurrent("check has actions BAD FORMATS", ({ expect }) => {
 		const file: Content = readFileSvelte(listFiles.component_BAD_FORMATS);
 		const content: string = file.content.content;
 		const actions: boolean = hasActions(content);
 		expect(actions).toBeTruthy();
 	});
 
-	test("count actions in files", () => {
+	it.concurrent("count actions in files", ({ expect }) => {
 		const file_js = getActions_asInFile(
 			readFileSvelte(listFiles.component_JS).content.content
 		);
@@ -157,7 +157,7 @@ describe("Parse Svelte - Checks Actions", () => {
 });
 
 describe("Parse Svelte - Checks Slots", () => {
-	test("check has slots JS", () => {
+	it.concurrent("check has slots JS", ({ expect }) => {
 		const file: Content = readFileSvelte(listFiles.component_JS);
 		const content: string = file.content.content;
 		const slots: boolean = hasSlots(content);
@@ -167,7 +167,7 @@ describe("Parse Svelte - Checks Slots", () => {
 		expect(listSlots[0].trim()).toBe(`<slot />`);
 	});
 
-	test("check has slots TS", () => {
+	it.concurrent("check has slots TS", ({ expect }) => {
 		const file: Content = readFileSvelte(listFiles.component_TS);
 		const content: string = file.content.content;
 		const slots: boolean = hasSlots(content);
@@ -177,7 +177,7 @@ describe("Parse Svelte - Checks Slots", () => {
 		expect(listSlots[0].trim()).toBe(`<slot />`);
 	});
 
-	test("check has slots NO ACTIONS", () => {
+	it.concurrent("check has slots NO ACTIONS", ({ expect }) => {
 		const file: Content = readFileSvelte(listFiles.component_NO_SCRIPT);
 		const content: string = file.content.content;
 		const slots: boolean = hasSlots(content);
@@ -186,21 +186,21 @@ describe("Parse Svelte - Checks Slots", () => {
 		expect(listSlots.length).toBe(0);
 	});
 
-	test("check has slots MULTI", () => {
+	it.concurrent("check has slots MULTI", ({ expect }) => {
 		const file: Content = readFileSvelte(listFiles.component_MULTI);
 		const content: string = file.content.content;
 		const slots: boolean = hasSlots(content);
 		expect(slots).toBeTruthy();
 	});
 
-	test("check has slots BAD FORMATS", () => {
+	it.concurrent("check has slots BAD FORMATS", ({ expect }) => {
 		const file: Content = readFileSvelte(listFiles.component_BAD_FORMATS);
 		const content: string = file.content.content;
 		const slots: boolean = hasSlots(content);
 		expect(slots).toBeTruthy();
 	});
 
-	test("count slots in files", () => {
+	it.concurrent("count slots in files", ({ expect }) => {
 		const file_js = getSlots_asInFile(
 			readFileSvelte(listFiles.component_JS).content.content
 		);
@@ -221,7 +221,7 @@ describe("Parse Svelte - Checks Slots", () => {
 });
 
 describe("Parse Svelte - Checks CSS VARIABLES", () => {
-	test("check has CSS VARIABLES JS", () => {
+	it.concurrent("check has CSS VARIABLES JS", ({ expect }) => {
 		const file: Content = readFileSvelte(listFiles.component_JS);
 		const content: string = file.content.content;
 		const css: boolean = hasCSS(content);
@@ -231,7 +231,7 @@ describe("Parse Svelte - Checks CSS VARIABLES", () => {
 		expect(listCss[0].trim()).toBe(`--color-background`);
 	});
 
-	test("check has CSS VARIABLES TS", () => {
+	it.concurrent("check has CSS VARIABLES TS", ({ expect }) => {
 		const file: Content = readFileSvelte(listFiles.component_TS);
 		const content: string = file.content.content;
 		const css: boolean = hasCSS(content);
@@ -241,7 +241,7 @@ describe("Parse Svelte - Checks CSS VARIABLES", () => {
 		expect(listCss[0].trim()).toBe(`--color-background`);
 	});
 
-	test("check has CSS VARIABLES NO VARIABLES", () => {
+	it.concurrent("check has CSS VARIABLES NO VARIABLES", ({ expect }) => {
 		const file: Content = readFileSvelte(listFiles.component_NO_SCRIPT);
 		const content: string = file.content.content;
 		const css: boolean = hasCSS(content);
@@ -250,21 +250,21 @@ describe("Parse Svelte - Checks CSS VARIABLES", () => {
 		expect(listCss.length).toBe(0);
 	});
 
-	test("check has CSS VARIABLES MULTI", () => {
+	it.concurrent("check has CSS VARIABLES MULTI", ({ expect }) => {
 		const file: Content = readFileSvelte(listFiles.component_MULTI);
 		const content: string = file.content.content;
 		const slots: boolean = hasCSS(content);
 		expect(slots).toBeTruthy();
 	});
 
-	test("check has CSS VARIABLES BAD FORMATS", () => {
+	it.concurrent("check has CSS VARIABLES BAD FORMATS", ({ expect }) => {
 		const file: Content = readFileSvelte(listFiles.component_BAD_FORMATS);
 		const content: string = file.content.content;
 		const slots: boolean = hasCSS(content);
 		expect(slots).toBeTruthy();
 	});
 
-	test("count CSS VARIABLES in files", () => {
+	it.concurrent("count CSS VARIABLES in files", ({ expect }) => {
 		const file_js = getCSS_asInFile(
 			readFileSvelte(listFiles.component_JS).content.content
 		);

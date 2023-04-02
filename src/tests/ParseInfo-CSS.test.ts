@@ -12,7 +12,7 @@ const listTest: Array<{ text: string; expectedCSS: string }> = [
 ];
 
 describe("Get actions", () => {
-	test.each(listTest)(
+	it.each(listTest)(
 		`Extract CSS from a text: $text => $expectedCSS`,
 		({ text, expectedCSS }) => {
 			const css: string = getCSSName(text);

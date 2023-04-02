@@ -5,9 +5,9 @@
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
     "scripts": {
-        "build": "tsc",
+        "build": "tsup src/index.ts --dts --format cjs,esm --external @el3um4s/to-try,prettier,prettier-plugin-svelte,true-case-path",
         "lint": "eslint . --ext .ts",
-        "test": "jest --config jestconfig.json",
+        "test": "vitest",
         "test:no-coverage": "jest --config jestconfig.json --coverage=false",
         "prepare": "npm run build",
         "prepublishOnly": "npm test && npm run lint",
@@ -43,8 +43,8 @@
     },
     "homepage": "https://github.com/huntabyte/comp-parser#readme",
     "devDependencies": {
-        "@types/jest": "^29.5.0",
         "@types/node": "^18.15.11",
+        "@types/prettier": "^2.7.2",
         "@typescript-eslint/eslint-plugin": "^5.57.0",
         "@typescript-eslint/parser": "^5.57.0",
         "eslint": "^8.37.0",
@@ -53,9 +53,10 @@
         "eslint-plugin-import": "^2.27.5",
         "eslint-plugin-node": "^11.1.0",
         "eslint-plugin-promise": "^6.1.1",
-        "jest": "^29.5.0",
-        "ts-jest": "^29.0.5",
-        "typescript": "^5.0.3"
+        "tsup": "^6.7.0",
+        "typescript": "^5.0.3",
+        "vite": "^4.2.1",
+        "vitest": "^0.29.8"
     },
     "dependencies": {
         "@el3um4s/to-try": "^1.0.1",
