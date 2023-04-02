@@ -19,7 +19,7 @@
         "url": "git+https://github.com/huntabyte/comp-parser.git"
     },
     "files": [
-        "lib/**/*"
+        "dist/**/*"
     ],
     "keywords": [
         "typescript",
