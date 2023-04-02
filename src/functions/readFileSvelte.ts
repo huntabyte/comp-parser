@@ -4,7 +4,7 @@ import { toTry } from "@el3um4s/to-try";
 import { format } from "prettier";
 import { Content } from "./interfaces";
 
-export function readFileSvelte(fileName: string) {
+export function readFileSvelte(nameFile: string) {
 	const content: Content = {
 		error: {
 			status: true,
@@ -16,12 +16,12 @@ export function readFileSvelte(fileName: string) {
 		}
 	};
 
-	if (checkFileExist(fileName)) {
-		const [result, error] = toTry(() => readFileSync(fileName));
+	if (checkFileExist(nameFile)) {
+		const [result, error] = toTry(() => readFileSync(nameFile));
 
 		if (!error && result) {
 			const rawContentString = result.toString();
-			const formattedContentString = fileName.endsWith(".svelte")
+			const formattedContentString = nameFile.endsWith(".svelte")
 				? format(rawContentString, {
 						parser: "svelte",
 						pluginSearchDirs: ["./node_modules"],
@@ -38,15 +38,15 @@ export function readFileSvelte(fileName: string) {
 			};
 		}
 	} else {
-		content.error.content = `File "${fileName}" not exist`;
+		content.error.content = `File "${nameFile}" not exist`;
 	}
 
 	return content;
 }
 
-export function checkFileExist(fileName: string): boolean {
+export function checkFileExist(nameFile: string): boolean {
 	try {
-		const truePath = trueCasePathSync(fileName);
+		const truePath = trueCasePathSync(nameFile);
 		return existsSync(truePath);
 	} catch {
 		return false;

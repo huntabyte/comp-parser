@@ -5,8 +5,8 @@ const listFiles = {
 	_test_root: "README.md",
 	_test_root_no_exist: "_test_root_no_exist",
 	_test_in_folder: "src/index.ts",
-	_test_file_void: "src/__tests__/test_files/file_void",
-	_test_file_1_line: "src/__tests__/test_files/file_hello_world"
+	_test_file_void: "src/tests/test_files/file_void",
+	_test_file_1_line: "src/tests/test_files/file_hello_world"
 };
 
 describe("Read files", () => {

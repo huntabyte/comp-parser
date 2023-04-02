@@ -346,7 +346,7 @@ const listTest: Array<{
 ];
 
 describe("Parse Svelte - PROPS - get informations", () => {
-	test.each(listTest)(
+	it.each(listTest)(
 		`get prop name("$prop") => $expectedName`,
 		({ prop, expectedName }) => {
 			const nameProp: string = getPropName(prop);
@@ -356,7 +356,7 @@ describe("Parse Svelte - PROPS - get informations", () => {
 		}
 	);
 
-	test.each(listTest)(
+	it.each(listTest)(
 		`get prop type("$prop") => $expectedType`,
 		({ prop, expectedType }) => {
 			const typeProp: string | undefined = getPropType(prop);
@@ -365,7 +365,7 @@ describe("Parse Svelte - PROPS - get informations", () => {
 		}
 	);
 
-	test.each(listTest)(
+	it.each(listTest)(
 		`get prop type("$prop") => $expectedDefaultValue`,
 		({ prop, expectedDefaultValue }) => {
 			const defaultProp: string | undefined = getPropDefaultValue(prop);
@@ -373,7 +373,7 @@ describe("Parse Svelte - PROPS - get informations", () => {
 		}
 	);
 
-	test.each(listTest)(
+	it.each(listTest)(
 		`get props ("$prop")`,
 		({ prop, expectedName, expectedType, expectedDefaultValue }) => {
 			const { name, type, defaultValue } = getPropInfo(prop);
