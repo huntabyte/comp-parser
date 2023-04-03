@@ -6,12 +6,7 @@
 
 ---
 
-This is a fork is a fork of [svelte-get-component-info](https://github.com/el3um4s/svelte-get-component-info). Credit to the original author [el3um4s](https://github.com/el3um4s) for doing all the hard work. I forked this project to add additional features necessary for another library I'm working on and may not align with the original author's vision for this project.
-
-Features added:
-
-- Support for multiline types
-- Format code string before parsing (format your components however you like, this library will handle them all the same)
+This is a fork of [svelte-get-component-info](https://github.com/el3um4s/svelte-get-component-info). Credit to the original author [el3um4s](https://github.com/el3um4s) for doing all the hard work. I forked this project to add additional features necessary for another library I'm working on which may not align with the original author's vision.
 
 ## The problem
 
@@ -70,3 +65,12 @@ const info: SvelteInformation = getInfo("./src/lib/hello.svelte");
     ]
 }
 ```
+
+### Features added:
+
+- Support for multiline types
+- Support for multiline default values
+- Format code string before parsing (format your components however you like, this library will handle them all the same)
+- Move tests from Jest to Vitest
+- Continuous Integration with GitHub Actions
+- Releases with changesets
